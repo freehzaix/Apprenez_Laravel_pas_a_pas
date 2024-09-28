@@ -4,16 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class EtudiantController extends Controller
+class LocationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $etudiants = ['étudiants', 'élèves', 'professeurs'];
-
-        return view('etudiant.index', compact('etudiants'));
+        //
     }
 
     /**
@@ -21,7 +19,7 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        //
+        return view('location.add');
     }
 
     /**
