@@ -10,6 +10,8 @@ Route::get('/', function(){
 });
 
 Route::get('/client/add', [ClientController::class, 'create'])->name('client.create');
+Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
+
 Route::get('/vehicule/add', [VehiculeController::class, 'create'])->name('vehicule.create');
 Route::get('/location/add', [LocationController::class, 'create'])->name('location.create');
 
