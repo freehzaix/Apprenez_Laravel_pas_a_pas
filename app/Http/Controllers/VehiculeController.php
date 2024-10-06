@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vehicule;
 use Illuminate\Http\Request;
 
 class VehiculeController extends Controller
@@ -27,7 +28,22 @@ class VehiculeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'numero_plaque' => 'required',
+            'marque' => 'required',
+            'modele' => 'required',
+            'couleur' => 'required',
+        ]);
+
+        $vehicule = new Vehicule();
+        $vehicule->numero_plaque = $request->numero_plaque;
+        $vehicule->marque = $request->marque;
+        $vehicule->modele = $request->modele;
+        $vehicule->couleur = $request->couleur;
+        $vehicule->save();
+
+        return redirect()->route('vehicule.create')->with('status', 'Le véhicule a bien été enregistré.');
+
     }
 
     /**

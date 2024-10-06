@@ -13,6 +13,8 @@ Route::get('/client/add', [ClientController::class, 'create'])->name('client.cre
 Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
 
 Route::get('/vehicule/add', [VehiculeController::class, 'create'])->name('vehicule.create');
+Route::post('/vehicule/store', [VehiculeController::class, 'store'])->name('vehicule.store');
+
 Route::get('/location/add', [LocationController::class, 'create'])->name('location.create');
 
 // Route::redirect('/', '/login');
