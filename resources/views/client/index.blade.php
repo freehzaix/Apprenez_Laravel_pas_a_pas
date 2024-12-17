@@ -9,23 +9,24 @@
         <h2 class="mt-5 mb-3">@yield('titlePage')</h2>
 
         <a href="{{ route('client.create') }}" class="btn btn-primary">Ajouter un client</a>
-
         @if(session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
             </div>
         @endif
+
         <hr>
+
         <table class="table">
             <thead>
-                <th>
-                    <td>ID</td>
-                    <td>Nom</td>
-                    <td>Prénom</td>
-                    <td>Adresse</td>
-                    <td>Téléphone</td>
-                    <td>Actions</td>
-                </th>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Adresse</th>
+                    <th>Téléphone</th>
+                    <th>Actions</th>
+                </tr>
             </thead>
             <tbody>
                 @foreach ($clients as $item)
@@ -43,5 +44,6 @@
                 @endforeach
             </tbody>
         </table>
+        
     </div>
 @endsection
