@@ -32,6 +32,7 @@
               </div>
               <div class="mb-3">
                 <button class="btn btn-primary" type="submit">Ajouter un client</button>
+                <a href="{{ route('client.index') }}" class="btn btn-info"> Revenir à la liste des clients </a>
               </div>
         </form>
     </div>

@@ -15,4 +15,6 @@ class Location extends Model
         'prix_location',
     ];
 
+    
+
 }
