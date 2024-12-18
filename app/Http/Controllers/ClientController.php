@@ -14,7 +14,7 @@ class ClientController extends Controller
     {
         $clients = Client::all();
 
-        return view('client.index', ['clients' => $clients]);
+        return view('client.index', compact('clients'));
     }
 
     /**
@@ -44,7 +44,7 @@ class ClientController extends Controller
         $client->telephone = $request->telephone;
         $client->save();
 
-        return redirect()->route('client.create')->with('status', 'Le client a bien été enregistré.');
+        return redirect()->route('client.index')->with('status', 'Le client a bien été enregistré.');
         
     }
 
