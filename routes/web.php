@@ -15,8 +15,10 @@ Route::get('/clients', [ClientController::class, 'index'])->name('client.index')
 
 Route::get('/vehicule/add', [VehiculeController::class, 'create'])->name('vehicule.create');
 Route::post('/vehicule/store', [VehiculeController::class, 'store'])->name('vehicule.store');
+Route::get('/vehicules', [VehiculeController::class, 'index'])->name('vehicule.index');
 
 Route::get('/location/add', [LocationController::class, 'create'])->name('location.create');
+Route::get('/locations', [LocationController::class, 'index'])->name('location.index');
 
 // Route::redirect('/', '/login');
 // Route::post();

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titlePage')
-    Liste des client
+    Liste des clients
 @endsection
 
 @section('content')

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
+use App\Models\Location;
+use App\Models\Vehicule;
 use Illuminate\Http\Request;
 
 class LocationController extends Controller
@@ -11,7 +14,9 @@ class LocationController extends Controller
      */
     public function index()
     {
-        //
+        $locations = Location::all();
+
+        return view('location.index', compact('locations'));
     }
 
     /**
@@ -19,7 +24,10 @@ class LocationController extends Controller
      */
     public function create()
     {
-        return view('location.add');
+        $clients = Client::all();
+        $vehicules = Vehicule::all();
+
+        return view('location.add', compact('clients', 'vehicules'));
     }
 
     /**

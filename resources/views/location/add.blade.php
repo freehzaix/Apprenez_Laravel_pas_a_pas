@@ -20,12 +20,18 @@
                 <label for="client" class="form-label">Client</label>
                 <select class="form-control" id="client"> 
                     <option value="">Choisir un client</option>
+                    @foreach ($clients as $item)
+                        <option value="{{ $item->id }}"> {{ $item->nom }} </option>
+                    @endforeach
                 </select>
             </div>
             <div class="mb-3">
                 <label for="vehicule" class="form-label">Véhicule</label>
                 <select class="form-control" id="vehicule"> 
                     <option value="">Choisir un vehicule</option>
+                    @foreach ($vehicules as $item)
+                        <option value="{{ $item->id }}"> {{ $item->numero_plaque }}, {{ $item->marque }} </option>
+                    @endforeach
                 </select>
             </div>
             <div class="mb-3">

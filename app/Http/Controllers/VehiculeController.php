@@ -12,7 +12,9 @@ class VehiculeController extends Controller
      */
     public function index()
     {
-        //
+        $vehicules = Vehicule::all();
+
+        return view('vehicule.index', compact('vehicules'));
     }
 
     /**
@@ -42,7 +44,7 @@ class VehiculeController extends Controller
         $vehicule->couleur = $request->couleur;
         $vehicule->save();
 
-        return redirect()->route('vehicule.create')->with('status', 'Le véhicule a bien été enregistré.');
+        return redirect()->route('vehicule.index')->with('status', 'Le véhicule a bien été enregistré.');
 
     }
 
