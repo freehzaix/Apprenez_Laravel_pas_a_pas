@@ -31,8 +31,8 @@
                 @foreach ($locations as $item)
                     <tr>
                         <td> {{ $item->id }} </td>
-                        <td> {{ ($item->date_fin - $item->date_debut)  }} </td>
-                        <td> {{ $item->prix_location }} </td>
+                        <td> {{ \Carbon\Carbon::parse($item->date_debut)->diffInDays(\Carbon\Carbon::parse($item->date_fin)) }} jours </td>
+                        <td> {{ $item->prix_location }} FCFA </td>
                         <td> {{ $item->clients->nom }} {{ $item->clients->prenom }} </td>
                         <td> {{ $item->vehicules->numero_plaque }} </td>
                         <td> 

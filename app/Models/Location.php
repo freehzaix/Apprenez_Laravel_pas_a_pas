@@ -14,6 +14,8 @@ class Location extends Model
         'date_debut',
         'date_fin',
         'prix_location',
+        'client_id',
+        'vehicule_id',
     ];
 
     public function vehicules(): BelongsTo

@@ -18,6 +18,7 @@ Route::post('/vehicule/store', [VehiculeController::class, 'store'])->name('vehi
 Route::get('/vehicules', [VehiculeController::class, 'index'])->name('vehicule.index');
 
 Route::get('/location/add', [LocationController::class, 'create'])->name('location.create');
+Route::post('/location/store', [LocationController::class, 'store'])->name('location.store');
 Route::get('/locations', [LocationController::class, 'index'])->name('location.index');
 
 // Route::redirect('/', '/login');
