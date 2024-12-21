@@ -20,6 +20,8 @@ Route::get('/vehicules', [VehiculeController::class, 'index'])->name('vehicule.i
 Route::get('/location/add', [LocationController::class, 'create'])->name('location.create');
 Route::post('/location/store', [LocationController::class, 'store'])->name('location.store');
 Route::get('/locations', [LocationController::class, 'index'])->name('location.index');
+Route::get('/location/{id}/show', [LocationController::class, 'show'])->name('location.show');
+Route::put('/location/{id}/update', [LocationController::class, 'update'])->name('location.update');
 
 // Route::redirect('/', '/login');
 // Route::post();

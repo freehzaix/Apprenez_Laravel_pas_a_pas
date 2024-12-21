@@ -55,8 +55,9 @@ class LocationController extends Controller
 
         // Si tu veux la différence en tant qu'entier
         $difference = (int) $difference;
+        $prix = $difference * 5000;
 
-        $location->prix_location = $difference * 5000;
+        $location->prix_location = $prix;
         $location->client_id = $request->client_id;
         $location->vehicule_id = $request->vehicule_id;
         $location->save();
@@ -69,7 +70,11 @@ class LocationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $location = Location::find($id);
+        $clients = Client::all()->except($location->client_id);
+        $vehicules = Vehicule::all()->except($location->vehicule_id);
+
+        return view('location.show', compact('location' , 'clients', 'vehicules'));
     }
 
     /**
@@ -85,7 +90,28 @@ class LocationController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+        $location = Location::find($id);
+        $location->date_debut = $request->date_debut;
+        $location->date_fin = $request->date_fin;
+        
+        $date_debut = Carbon::parse($request->date_debut);
+        $date_fin = Carbon::parse($request->date_fin);
+
+        // Calcul de la différence en jours
+        $difference = $date_debut->diffInDays($date_fin);
+
+        // Si tu veux la différence en tant qu'entier
+        $difference = (int) $difference;
+        $prix = $difference * 5000;
+
+        $location->prix_location = $prix;
+        $location->client_id = $request->client_id;
+        $location->vehicule_id = $request->vehicule_id;
+        $location->update();
+
+        return redirect()->route('location.index')->with('status', 'Votre location a bien été modifié.');
+
     }
 
     /**

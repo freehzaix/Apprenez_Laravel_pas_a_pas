@@ -36,7 +36,7 @@
                         <td> {{ $item->clients->nom }} {{ $item->clients->prenom }} </td>
                         <td> {{ $item->vehicules->numero_plaque }} </td>
                         <td> 
-                            <a href="#" class="btn btn-info">Modifier</a>
+                            <a href="{{ route('location.show', $item->id) }}" class="btn btn-info">Modifier</a>
                             <a href="#" class="btn btn-danger">Supprimer</a>
                         </td>
                     </tr>   
