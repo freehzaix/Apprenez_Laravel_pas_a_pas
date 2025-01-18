@@ -35,6 +35,11 @@ class ClientController extends Controller
             'prenom' => 'required',
             'adresse' => 'required',
             'telephone' => 'required',
+        ],[
+            'nom.required' => 'Le champs nom est réquis.',
+            'prenom.required' => 'Le champs prénom est réquis.',
+            'adresse.required' => 'Le champs adresse est réquis.',
+            'telephone.required' => 'Le champs téléphone est réquis.',
         ]);
 
         $client = new Client();
